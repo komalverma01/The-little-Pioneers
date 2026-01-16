@@ -203,10 +203,11 @@ if (!customElements.get('product-info')) {
           const buttonTextSpan = submitButton?.querySelector('span');
           const htmlButtonText = buttonTextSpan?.textContent?.trim();
           
-          // Check if variant is in pre-order state (inventory managed by Shopify, quantity is 0, but button is enabled)
+          // Check if variant is in pre-order state (inventory managed by Shopify, quantity is 0, continue selling enabled, but button is enabled)
           const isPreOrder = variant && 
                             variant.inventory_management === 'shopify' && 
                             variant.inventory_quantity === 0 && 
+                            variant.inventory_policy === 'continue' &&
                             !variant.available &&
                             !isDisabled;
           

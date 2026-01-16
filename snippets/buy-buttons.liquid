@@ -54,7 +54,7 @@
           endif
           
           assign is_pre_order = false
-          if product.selected_or_first_available_variant.inventory_management == 'shopify' and product.selected_or_first_available_variant.inventory_quantity == 0
+          if product.selected_or_first_available_variant.inventory_management == 'shopify' and product.selected_or_first_available_variant.inventory_quantity == 0 and product.selected_or_first_available_variant.inventory_policy == 'continue'
             assign is_pre_order = true
           endif
         -%}
@@ -90,7 +90,7 @@
             endif
             
             assign is_pre_order = false
-            if product.selected_or_first_available_variant.inventory_management == 'shopify' and product.selected_or_first_available_variant.inventory_quantity == 0
+            if product.selected_or_first_available_variant.inventory_management == 'shopify' and product.selected_or_first_available_variant.inventory_quantity == 0 and product.selected_or_first_available_variant.inventory_policy == 'continue'
               assign is_pre_order = true
             endif
           -%}
